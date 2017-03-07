@@ -1,4 +1,4 @@
-angular.module('sim', ['ui.router', 'ngSanitize'])
+angular.module('sim', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider){
         
         $urlRouterProvider.otherwise('/');
