@@ -1,0 +1,33 @@
+<div class="container text-center" ng-controller="matchController as mc">
+    <button class="btn" ng-click="mc.kickoff()">Start Match</button>
+    <button ng-show="mc.continue" class="btn" ui-sref="table">Continue</button>
+    <div class="row">
+        <div class="col-xs-6">
+            <h1>{{mc.teamName}}</h1>
+        </div>
+        <div class="col-xs-6">
+            <h1>{{mc.opponent}}</h1>
+        </div>
+    </div>
+    <!--<h1>{{mc.counter}}</h1>-->
+    <div class="row">
+        <div class="col-xs-6">
+            <h1>{{mc.yourScore}}</h1>
+        </div>
+        <div class="col-xs-6">
+            <h1>{{mc.opponentScore}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div ng-repeat="goal in mc.yourGoals">
+                <h4>{{goal.scorer}} in minute {{goal.minute}}</h4>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div ng-repeat="poo in mc.theirGoals">
+                <h4>{{poo.scorer}} in minute {{poo.minute}}</h4>
+            </div>
+        </div>
+    </div>
+</div>

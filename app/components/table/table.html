@@ -1,0 +1,33 @@
+<div ng-controller="tableController as tc" class="container text-center">
+    <div class="tab text-center">
+        <table>
+            <thead>
+                <th>#</th>
+                <th>Team</th>
+                <th>GP</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GD</th>
+                <th>PTS</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="team in tc.teamArr">
+                    <td>{{team.position}}</td>
+                    <td>{{team.name}}</td>
+                    <td>{{tc.gp}}</td>
+                    <td>{{team.wins}}</td>
+                    <td>{{team.draws}}</td>
+                    <td>{{team.losses}}</td>
+                    <td>{{team.goals}}</td>
+                    <td>{{team.conceded}}</td>
+                    <td>{{team.gd}}</td>
+                    <td>{{team.points}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="btn" ui-sref="match" ng-click="tc.next()">Next Match</button>
+</div>

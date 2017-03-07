@@ -1,0 +1,24 @@
+<div ng-controller="lineupController as lc" id="page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 player-list">
+                <ul id="player-list"></ul>
+            </div>
+            <div class="col-xs-4 text-center">
+                <h3>{{lc.team}}</h3>
+                <div class="card">
+                    <img src="images/field.jpg" class="ui-widget-header" id="droppable">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-success move" ui-sref="match">All Done!</button>
+                <div class="eleven-card text-center">
+                    <h3>My Starting 11</h3>
+                    <div id="starters">
+                        <div id="draggable"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
