@@ -417,7 +417,4 @@ angular.module('sim')
             }
          this.done = check;
         })
-        
-        
-        
     })

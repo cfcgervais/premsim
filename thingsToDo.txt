@@ -1,5 +1,7 @@
-1. Figure out how to create a season schedule. (Hard-code?)
-2. Create a function, called in hte match function, that calls the match function on all other matches for that gameday.
-3. Manipulate the DOM.
-4. Link the user's starting 11 to the lineup creator thingy.
-6. Make it pretty.
+. Require the user to pick 11 starters before continuing. (Require defenders?)
+. Save user progress to local storage. (or back-end??)
+. Tie console window to DOM for running tally of goals during game?
+. CORS?
+. Rewrite lineup creator in angular?
+. Make it pretty.
+. Injuries? Subs? Transfer Market? Fifa?
