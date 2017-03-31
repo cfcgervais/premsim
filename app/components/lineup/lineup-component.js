@@ -1,4 +1,9 @@
 angular.module('sim')
+    .config(['$httpProvider', function($httpProvider) {
+            $httpProvider.defaults.useXDomain = true;
+            delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        }
+    ])
     .component('lineupComponent', {
         controller: 'lineupController',
         templateUrl: 'app/components/lineup/lineup.html'
@@ -9,13 +14,18 @@ angular.module('sim')
         this.team = Service.team;
         this.done = true;
         
-        $http.get(dumpUrl).success(function(data){
+        $http({
+            method: 'jsonp',
+            url: dumpUrl,
+            params: {
+                format: 'jsonp',
+                callback: 'JSON_CALLBACK'
+            }
+        }).then(function(data){
 
             var mySquad = Service.team;
             var playerTeam;
             this.opponent;
-            var sched1 = [];
-            var sched2 = [];
             var teamArr = [];
             var chelsea = {};
             var arsenal = {};
@@ -305,6 +315,7 @@ angular.module('sim')
             var myEleven = [];
             var myBench = [];
             var myFormation = [];
+
             if(Service.myEleven.length > 0){
                 myEleven = Service.myEleven;
             }
@@ -415,6 +426,5 @@ angular.module('sim')
                     Service.teams[i].starters = myEleven;
                 }
             }
-         this.done = check;
         })
     })

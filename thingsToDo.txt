@@ -1,4 +1,5 @@
 . Require the user to pick 11 starters before continuing. (Require defenders?)
+. Give option to change starting 11.
 . Save user progress to local storage. (or back-end??)
 . Tie console window to DOM for running tally of goals during game?
 . CORS?

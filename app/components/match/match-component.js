@@ -20,7 +20,7 @@ angular.module('sim')
                     var team = arr[i];
                     goalChance(team);
                     ga(team);
-                    starters(team)
+                    starters(team);
                     if(team.name === data.userTeam.name){
                         team.user = true;
                         playerTeam = team;
@@ -152,7 +152,7 @@ angular.module('sim')
             yourSchedule();
             function yourSchedule(){
                 for(var i = 0; i < Service.schedule.length + 1; i++){
-                    var week = Service.schedule[i]
+                    var week = Service.schedule[i];
                     if(i + 1 === Service.matchday){
                         for(var j = 0; j < week.length; j++){
                             var match = week[j]
@@ -167,6 +167,16 @@ angular.module('sim')
                 }
             }
             this.opponent = Service.currentOpponent.name;
+
+            // for(var i = 0; i < Service.teams.length; i++){
+            //     if(Service.teams[i].abrev == "CHE"){
+            //         var team = Service.teams[i];
+            //         for(var j = 0; j < team.starters.length; j++){
+            //             console.log(team.starters[j]);
+            //         }
+            //     }
+            // }
+           
             
             function Match(team1, team2){
                 team1.score = 0;
@@ -237,7 +247,7 @@ angular.module('sim')
                     Service.currentScore = team2.score;
                 }
                 if(team1 === Service.currentOpponent){
-                     Service.currentOppScore = team1.score;
+                    Service.currentOppScore = team1.score;
                 }
                 if(team2 === Service.currentOpponent){
                     Service.currentOppScore = team2.score;
