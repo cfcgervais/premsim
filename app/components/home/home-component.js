@@ -15,10 +15,10 @@ angular.module('sim')
             // $scope.team = Service.team;
             Service.team = myTeam;
         }
+        console.log('Currently needs CORS chrome extension for http request to work');
         var dumpUrl = "https://fantasy.premierleague.com/drf/bootstrap-static";
 
         $http.get(dumpUrl).success(function (data) {
-            console.log('Currently needs CORS chrome extension for http request to work');
             var mySquad = Service.team;
             var playerTeam;
             var teamArr = [];
