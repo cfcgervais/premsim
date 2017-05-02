@@ -7,7 +7,7 @@ angular.module('sim', ['ui.router'])
             .state('home', {
                 url: '/',
                 templateUrl: 'app/components/home/home.html',
-                controller: 'homeController'
+                // controller: 'homeController'
             })
             .state('lineup', {
                 url: '/lineup',

@@ -1,17 +1,53 @@
+<!--___________ANGULAR VERSION____________-->
 <div ng-controller="lineupController as lc" id="page">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 player-list">
-                <ul id="player-list"></ul>
+                <ul ng-repeat="player in lc.team.players" class="player">
+                    <li class="hey black"><button class="btn-success nomarg" ng-click="lc.start(player.web_name)">Start</button> {{player.web_name}}</li>
+                </ul>
             </div>
             <div class="col-xs-4 text-center">
-                <h3>{{lc.team}}</h3>
+                <img ng-src="{{lc.crest}}">
+                <h2 class="black">{{lc.team.name}}</h2>
+                <div class="card text-center">
+                    <img src="images/field.jpg" class="ui-widget-header" id="droppable">
+                </div>
+                <h2 class="black">{{lc.message}}</h2>
+                <button class="btn btn-danger" ng-show="lc.newbutton" ui-sref="lineup">Try again</button>
+
+            </div>
+            <div class="col-xs-4">
+                <button ng-show="lc.done" class="btn btn-success move" ui-sref="match">All Done!</button>
+                <div class="eleven-card text-center">
+                    <h3 class="black">My Starting 11</h3>
+                    <div ng-repeat="bro in lc.myEleven" id="starters" class="hey">
+                        <div id="draggable">
+                            <div class="ui-widget-content drag"><h5>{{bro.web_name}}</h5><i class="fa fa-futbol-o fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--_______JQUERY VERSION______-->
+<!--<div class="lineup" id="page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 player-list">
+                <h1>Chelsea FC Squad</h1>
+                <ul id="player-list">
+                </ul>
+            </div>
+            <div class="col-xs-4">
                 <div class="card">
                     <img src="images/field.jpg" class="ui-widget-header" id="droppable">
                 </div>
             </div>
             <div class="col-xs-4">
-                <button class="btn btn-success move" ui-sref="match">All Done!</button>
                 <div class="eleven-card text-center">
                     <h3>My Starting 11</h3>
                     <div id="starters">
@@ -21,4 +57,6 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
+
