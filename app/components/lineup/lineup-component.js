@@ -1,9 +1,4 @@
 angular.module('sim')
-    .config(['$httpProvider', function ($httpProvider) {
-        $httpProvider.defaults.useXDomain = true;
-        delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    }
-    ])
     .component('lineupComponent', {
         controller: 'lineupController',
         templateUrl: 'app/components/lineup/lineup.html'

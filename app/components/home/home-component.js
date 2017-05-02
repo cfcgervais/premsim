@@ -1,4 +1,9 @@
 angular.module('sim')
+    .config(['$httpProvider', function ($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }
+    ])
     .component('homeComponent', {
         controller: 'homeController',
         templateUrl: 'app/components/home/home.html'
@@ -13,7 +18,7 @@ angular.module('sim')
         var dumpUrl = "https://fantasy.premierleague.com/drf/bootstrap-static";
 
         $http.get(dumpUrl).success(function (data) {
-
+            console.log('Currently needs CORS chrome extension for http request to work');
             var mySquad = Service.team;
             var playerTeam;
             var teamArr = [];
